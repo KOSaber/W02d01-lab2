@@ -15,6 +15,11 @@ console.log(calculateCube(5));
 
 > => 125
 
+function calculateCube(n){
+  console.log(Math.pow(n,3));
+}
+
+calculateCube(5);
 
 # 2
 ## Is a Vowel?
@@ -26,6 +31,14 @@ console.log(isAVowel("a"));
 
 > => true
 
+function isAVowel(letter){
+  if(letter == 'a' ||letter == 'A' ||letter == 'e' ||letter == 'E' ||letter == 'i' ||
+     letter == 'I' ||letter == 'o' ||letter == 'O' ||letter == 'u' ||letter == 'U')
+    return true;
+  else return false ;
+}
+
+console.log(isAVowel("a"));
 
 # 3
 ## Get Two Lengths
@@ -37,6 +50,20 @@ console.log(getTwoLengths("Hank", "Hippopopalous"));
 
 > => [4, 13]
 
+
+function getTwoLengths(s1,s2){
+ var l1=0
+ var l2=0
+  var arr = []
+ l1=s1.length
+ l2=s2.length
+ arr.push(l1)
+ arr.push(l2)
+ return arr
+ 
+}
+
+console.log(getTwoLengths("Hank", "Hippopopalous"));
 
 # 4 
 ## Get Multiple Lengths
@@ -50,6 +77,22 @@ console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
 
 > => [5, 4, 2, 2, 4]
 
+function getMultipleLengths(s){
+
+  var i=0
+  var arr = []
+  
+  while(i<s.length){
+    arr.push(s[i].length)
+    i++;
+  }
+
+ 
+ return arr
+ 
+}
+
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
 
 # 5
 ## Maximum of Three Numbers
@@ -61,7 +104,24 @@ console.log(maxOfThree(6, 9, 1));
 
 > => 9
 
+function maxOfThree(n1,n2,n3){
 
+  var largest = 0
+  
+  if(n1>n2)
+    largest= n1
+    else 
+      largest=n2
+      
+   if (largest<n3)
+     largest = n3
+     
+ 
+ return largest
+ 
+}
+
+console.log(maxOfThree(6, 9, 9));
 # 6
 ## Print Longest Word
 
@@ -72,6 +132,34 @@ console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanut
 ```
 
 > => "Peanutbutter"
+
+function printLongestWord(str){
+
+  var i=0
+  var arr = []
+  var largest = 0
+  var f = str[0]
+ 
+  
+  while(i < (str.length-1)){
+    
+    if(str[i].length > str[i+1].length)
+      str[i+1]=str[i]
+      else str[i+1]=str[i+1]
+
+      
+    i++;
+  }
+ 
+     if(str[i].length == f.length)
+     return f
+  
+return str[i];
+ 
+}
+
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "blob"]));
+console.log(printLongestWord(["BoJk", "Prirrs", "Diae", "aa", "Maxi", "ter", "bige", "lob"]));
 
 
 # 7
@@ -88,6 +176,20 @@ console.log(transmogrify(5, 3, 2));
 ```
 
 > => 225
+
+
+function transmogrify(n1,n2,n3){
+  
+  
+  var r = n1*n2
+  var p = Math.pow(r,n3)
+  
+  return p;
+}
+
+
+console.log(transmogrify(5, 3, 2));
+
 
 <br>
 <hr>
@@ -124,3 +226,20 @@ After your function finds the needle it should return a message (as a string) th
 Should return:
 
 `"found the needle at position 5"`
+
+function find_needle(arr){
+
+var i=0;
+  
+ while(i< arr.length){
+   
+   if(arr[i] == "needle")
+     console.log("found the needle at position " + i)
+      
+   i++;
+ }
+ 
+}
+
+find_needle(['hay', 'junk', 'hay', 'hay', 'moreJunk', 'needle', 'randomJunk']);
+
